@@ -1,0 +1,40 @@
+<div class="ks-page">
+  <div class="ks-body">
+   <div class="card panel panel-default ks-light ks-panel ks-login">
+      <div class="card-block">
+        <form class="form-container form-signin" (ngSubmit)="onSignin(f)" #f="ngForm">
+          <div class="ks-logo ks-header" align="center">
+            <img src="../../../assets/images/shieldstatusID.jpg" width="300" height="80">
+          </div>
+          <div class="form-group">
+            <div class="input-icon icon-left icon-lg icon-color-primary">
+              <input type="text" id="login" name="login" class="form-control" placeholder="Login" ngModel required autofocus>
+              <span class="icon-addon">
+                <span class="la la-envelope-o"></span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-icon icon-left icon-lg icon-color-primary">
+              <input type="password" id="password" name="password" class="form-control" placeholder="Password" ngModel required>
+              <span class="icon-addon">
+                <span class="la la-key"></span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group" align="right">
+            <label *ngIf="signinError"><b>Incorrect data or server error.</b>
+              <br>Please enter the correct data or try again later.</label>
+            <button type="submit" class="btn btn-danger">Login</button>
+          </div>
+          <div class="ks-text-center">
+            No account? <a href="">Signup</a>
+          </div>
+          <div class="ks-text-center">
+            <a href="#">Forgot?</a>
+          </div>
+       </form>
+      </div>
+    </div>
+  </div>
+</div>

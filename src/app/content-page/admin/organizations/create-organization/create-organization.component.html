@@ -1,0 +1,68 @@
+  <!--<div class="ks-content">-->
+    <!--<div class="ks-body tables-page">-->
+      <div class="ks-nav-body-wrapper">
+
+    <form class="well form-horizontal" (ngSubmit)="createCompany(f)" #f="ngForm">
+
+        <h3><b>Create Organization</b></h3>
+        <hr>
+
+        <div class="alert alert-danger col-md-12" *ngIf="errorGetDataListInfo">
+            Error retrieving data list...
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div><b>Company information</b><br></div>
+
+              <div class="form-group">
+                <label class="control-label">Organization Name</label>
+                <div class="inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"></span>
+                    <input id="companyName" name="companyName" placeholder="Company name" class="form-control" type="text" ngModel required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Organization address</label>
+                <div class="inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"></span>
+                    <input id="companyAddress" name="companyAddress" placeholder="Company address" class="form-control" type="text" ngModel required>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+        </div>
+
+        <!-- Success message -->
+        <div class="alert alert-success col-md-12" *ngIf="successInfo">
+            Organization successfully created!
+        </div>
+        <div class="alert alert-danger col-md-12" *ngIf="errorInfo">
+            Failed to create organization. Error from server...
+        </div>
+
+        <div class="alert alert-danger col-md-12" *ngIf="errorValidationInfo">
+            Required or fill all form fields.
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-success col-md-6 ks-rounded">Create</button>
+            </div>
+        </div>
+
+    </form>
+
+
+
+      </div>
+    <!--</div>-->
+  <!--</div>-->
+

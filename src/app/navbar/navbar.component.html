@@ -1,0 +1,31 @@
+<div class="ks-column ks-sidebar ks-danger" [class.sbar-show]="sidebarService.isOpen"
+     [class.sbar-hide]="!sidebarService.isOpen" id="ex3">
+  <div class="ks-wrapper jspScrollable">
+    <ul class="nav nav-pills nav-stacked">
+      <li class="nav-item dropdown" *ngIf="isAdmin">
+        <a class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;" routerLink="/dashboard/home">
+          <span class="ks-icon la la-dashboard"></span>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="isAdmin">
+        <a class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+          <span class="ks-icon la la-cubes"></span>
+          <span>Application Management</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="isAdmin">
+        <a class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;" routerLink="/dashboard/user-management">
+          <span class="ks-icon la la-flask"></span>
+          <span>User Management</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="isSuperAdmin">
+        <a class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;" routerLink="/dashboard/admin/organizations">
+          <span class="ks-icon la la-flask"></span>
+          <span>Organizations</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

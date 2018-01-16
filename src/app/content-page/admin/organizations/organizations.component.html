@@ -1,0 +1,89 @@
+<div class="row-fluid">
+  <div class="component-background">
+    <div class="ks-column ks-page">
+      <div class="ks-content">
+        <div class="ks-body tables-page">
+          <div class="ks-nav-body-wrapper">
+            <div class="form-group row container-fluid">
+              <div class="col-sm-8 input-icon icon-left icon icon-lg icon-color-primary">
+                <input id="input-group-icon-text" type="text" class="form-control" (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                <span class="icon-addon">
+                  <span class="la la-search ks-icon"></span>
+                </span>
+              </div>
+              <div for="default-input-rounded" class="form-control-button">
+                <button type="button" class="btn btn-success ks-rounded" role="button" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;" routerLink="../create-organization"> <!--(click)="goToAdd()" -->
+                  Add a Organization
+                </button>
+              </div>
+              <div class="form-group">
+                <div class="col-md-offset-2 col-md-8"> </div>
+              </div>
+            </div>
+            <div class="row">
+              <h3><b>Organizations List</b></h3>
+              <table class="table table-hover ks-text-light ks-table-header" style="width : 100%;" id="ks-datatable-basic ks-datatable" cellspacing="0">
+                <thead>
+                <tr>
+                  <td>NAME</td>
+                  <td>ADDRESS</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let organization of organizations">
+
+                  <ng-template [ngTemplateOutlet]="loadTemplate(organization)"
+                               [ngTemplateOutletContext]="{ $implicit: organization}">
+                  </ng-template>
+                </tr>
+                </tbody>
+              </table>
+              <div>{{statusMessage}}</div>
+
+              <!--read-->
+              <ng-template #readOnlyTemplate let-organization>
+                <td>{{organization.name}}</td>
+                <td>{{organization.address}}</td>
+                <td>
+                  <input type="button" value="Edit" class="btn btn-default ks-rounded" (click)="editOrganization(organization)" />
+                </td>
+                <td>
+                  <input type="button" value="Delete" (click)="deleteOrganization(organization)" class="btn btn-danger ks-rounded" />
+                </td>
+                <td>
+                  <input type="button" value="View Admins" class="btn btn-success ks-rounded" role="button" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;" (click)="viewOrganization(organization)"/>
+                </td>
+              </ng-template>
+
+              <!--edit-->
+              <ng-template #editTemplate>
+                <td>
+                  <input type="text" [(ngModel)]="editedOrganization.organizationId" readonly disabled class="form-control" />
+                </td>
+                <td>
+                  <input type="text" [(ngModel)]="editedOrganization.organizationName" class="form-control" />
+                </td>
+                <td>
+                  <input type="text" [(ngModel)]="editedOrganization.organizationAddress" class="form-control" />
+                </td>
+                <td>
+                  <input type="button" value="Save" (click)="saveOrganization()" class="btn btn-success" />
+                </td>
+                <td>
+                  <input type="button" value="Cancel" (click)="cancel()" class="btn btn-warning" />
+                </td>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <!--</div>-->
+</div>

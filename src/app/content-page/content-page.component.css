@@ -1,0 +1,22 @@
+.wrapper-sidebar {
+  z-index: 1;
+  position: absolute;
+  overflow-y: auto;
+  scrollbar-track-color: #000000;
+  scrollbar-face-color: #136a20;
+}
+
+.wrapper-main-content {
+  /*width: 100%;*/
+  /*position: relative;*/
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-bottom: 15px;
+  background-color: #fff;
+  margin-top: 20px;
+  margin-left: 310px;
+  padding-right: 15px;
+  margin-right: 25px;
+  border-radius: 5px;
+  border: 1px solid rgba(38, 49, 56, .1);
+}
